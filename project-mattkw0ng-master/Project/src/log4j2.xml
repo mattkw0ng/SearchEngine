@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE log4j:configuration>
+<!-- Status determines which log4j log messages are included. -->
+<Configuration status="WARN">
+	<Appenders>
+		<!-- We can make the console output more user-friendly if we want. -->
+		<Console name="Console" target="SYSTEM_OUT">
+			<PatternLayout alwaysWriteExceptions = "false"
+			pattern="%-5p [%t]: %m%n">
+			</PatternLayout>
+		</Console>
+
+		<!-- We can still keep details in a file log for debugging. -->
+		<File name="FileLog" fileName="debug.log" append="true">
+			<PatternLayout
+				pattern="%-5p [%t]: %m%n">
+			</PatternLayout>
+		</File>
+	</Appenders>
+
+	<Loggers>
+		<Logger name="LoggerSetup" level="ALL" additivity="false">
+			<AppenderRef ref="Console" level="ALL" />
+			<AppenderRef ref="FileLog" level="ALL" />
+		</Logger>
+		<!-- This is the configuration used by all other loggers. -->
+		<Root level="All">
+			<AppenderRef ref="Console" level="ALL" />
+			<AppenderRef ref="FileLog" level="ALL" />
+		</Root>
+		
+	</Loggers>
+</Configuration>

@@ -1,0 +1,11 @@
+      <div class="searchResult">
+        <p class="text-secondary">
+          <form action="${action}" method="post" id="${result}">
+            <input type="hidden" id="favorite" name="favorite" value="${result}">
+          </form>
+          <form action="/home" method="get">
+            <i class="far fa-star favorite" onclick="favorite(this, '${result}')"></i>
+             ${number}. <input class="link" type="submit" id="link" name="link" value="${result}"/>
+          </form>
+        </p>
+      </div>

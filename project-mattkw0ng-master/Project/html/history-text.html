@@ -1,0 +1,10 @@
+	  <div class="searchResult">
+        <p class="text-secondary">
+        	<form action="/home" method="post">
+        		<input type="hidden" id="search" name="search" value="${result}"/>
+        		<i class="fas fa-angle-right"></i> ${number}. <button class="link" type="submit">${result}</button>
+        		<p style="margin-left: 20px;"><small class="blockquote-footer text-secondary"><em>${message}</em></small></p>
+        		<input type="hidden" id="searchType" name="searchType" value="Partial">
+        	</form>
+        </p>
+      </div>
